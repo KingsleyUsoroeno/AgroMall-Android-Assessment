@@ -10,6 +10,7 @@
         android:name="com.techkingsley.agromall.ui.authentication.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
+
         <action
             android:id="@+id/action_loginFragment_to_onBoardingFragment"
             app:destination="@id/onBoardingFragment"
@@ -32,21 +33,80 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/onBoardingFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.techkingsley.agromall.ui.registration.RegistrationFragment"
-        android:label="registration_fragment"
+        android:label="Register Farmer"
         tools:layout="@layout/registration_fragment">
         <action
             android:id="@+id/action_registrationFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registrationFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.techkingsley.agromall.ui.dashboard.DashboardFragment"
-        android:label="dashboard_fragment"
-        tools:layout="@layout/dashboard_fragment" />
+        android:label="Dashboard"
+        tools:layout="@layout/dashboard_fragment">
+        <action
+            android:id="@+id/action_dashboardFragment_to_addFarmFragment"
+            app:destination="@id/addFarmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_dashboardFragment_to_farmsFragment"
+            app:destination="@id/farmsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_dashboardFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addFarmFragment"
+        android:name="com.techkingsley.agromall.ui.farms.AddFarmFragment"
+        android:label="Register a Farm"
+        tools:layout="@layout/add_farm_fragment">
+
+        <argument
+            android:name="farmerId"
+            android:defaultValue="defaultValue"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_addFarmFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/addFarmFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/farmsFragment"
+        android:name="com.techkingsley.agromall.ui.farms.FarmsFragment"
+        android:label="All Farms"
+        tools:layout="@layout/farms_fragment">
+
+        <argument
+            android:name="farmerId"
+            android:defaultValue="defaultValue"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -1,7 +1,16 @@
 package com.techkingsley.agromall.ui.dashboard
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import com.techkingsley.agromall.data.source.FarmersRepository
 
-class DashboardViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class DashboardViewModel(app: Application) : AndroidViewModel(app) {
+
+    private val farmerRepository = FarmersRepository.getRepository(app)
+
+    val observeFarmers = farmerRepository.observeFarmers()
+
+    val getTotalFarmers = farmerRepository.getTotalFarmers()
+
+    val getTotalFarms = farmerRepository.getTotalFarms()
 }

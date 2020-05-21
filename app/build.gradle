@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion 29
@@ -79,6 +80,9 @@ dependencies {
     implementation 'me.relex:circleindicator:2.1.4'
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //ViewModelScope
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
 
 }

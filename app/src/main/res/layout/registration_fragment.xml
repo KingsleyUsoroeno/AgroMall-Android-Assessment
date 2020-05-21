@@ -36,7 +36,9 @@
                     android:id="@+id/imgContactImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@color/colorPrimary"
+                    android:src="@drawable/user_placeholder_image"
+                    app:civ_border_color="@color/backgroundColor"
+                    app:civ_border_width="1dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -46,6 +48,7 @@
                     android:id="@+id/imageIcon"
                     android:layout_width="46dp"
                     android:layout_height="46dp"
+                    android:tint="@color/backgroundColor"
                     android:src="@drawable/ic_camera"
                     app:layout_constraintBottom_toBottomOf="@id/imgContactImage"
                     app:layout_constraintEnd_toEndOf="@id/imgContactImage" />
@@ -61,6 +64,7 @@
                 android:layout_marginEnd="20dp"
                 android:hint="Full Name"
                 app:errorEnabled="true"
+                app:error="@{registrationViewModel.errorFullNameLiveData}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/profile_layout">
@@ -68,7 +72,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:text="@={registrationViewModel.fullNameLiveData}" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -81,6 +86,7 @@
                 android:layout_marginEnd="20dp"
                 android:hint="Email Address"
                 app:errorEnabled="true"
+                app:error="@{registrationViewModel.errorEmailLiveData}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textFullName">
@@ -88,6 +94,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:text="@={registrationViewModel.emailLiveData}"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,6 +106,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="20dp"
+                app:error="@{registrationViewModel.errorPhoneNumberLiveData}"
                 android:hint="Phone Number"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -108,6 +116,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:text="@={registrationViewModel.phoneNumberLiveData}"
                     android:inputType="phone" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -123,6 +132,7 @@
                 android:layout_marginEnd="20dp"
                 android:hint="Home Address"
                 app:errorEnabled="true"
+                app:error="@{registrationViewModel.errorHomeAddressLiveData}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textInputPhoneNumber">
@@ -130,65 +140,23 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:text="@={registrationViewModel.homeAddressLiveData}"
                     android:inputType="textLongMessage" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputFarmName"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="20dp"
-                android:hint="Farm Name"
-                app:errorEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textInputHomeAddress">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputFarmLocation"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="20dp"
-                android:hint="Farm Location"
-                app:errorEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textInputFarmName">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/submitBtn"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="18dp"
-                android:text="Submit"
-                android:textAllCaps="false"
+                android:onClick="@{() -> registrationViewModel.registerFarmer()}"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/textInputFarmLocation"
-                app:layout_constraintStart_toStartOf="@id/textInputFarmLocation"
-                app:layout_constraintTop_toBottomOf="@id/textInputFarmLocation" />
+                android:text="Register"
+                app:layout_constraintEnd_toEndOf="@id/textInputHomeAddress"
+                app:layout_constraintStart_toStartOf="@id/textInputHomeAddress"
+                app:layout_constraintTop_toBottomOf="@id/textInputHomeAddress" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
 </layout>

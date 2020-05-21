@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="addFarmVm"
+            type="com.techkingsley.agromall.ui.farms.AddFarmViewModel" />
+
+        <variable
+            name="farmerId"
+            type="String" />
+
+        <variable
+            name="userId"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.farms.AddFarmFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputFarmName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Farm Name"
+            app:error="@{addFarmVm.errorFarmNameLiveData}"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:text="@={addFarmVm.farmNameLiveData}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputFarmsLocation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Your Farms location"
+            app:error="@{addFarmVm.errorFarmLocationLiveData}"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textInputFarmName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:text="@={addFarmVm.farmsLocationLiveData}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegisterFarm"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="18dp"
+            android:onClick="@{() -> addFarmVm.registerFarm(farmerId, userId)}"
+            android:text="Register Farm"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/textInputFarmsLocation"
+            app:layout_constraintStart_toStartOf="@id/textInputFarmsLocation"
+            app:layout_constraintTop_toBottomOf="@id/textInputFarmsLocation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

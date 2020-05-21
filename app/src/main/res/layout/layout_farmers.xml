@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="farmers"
+            type="com.techkingsley.agromall.data.Farmers" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadImage="@{farmers.imageUrl}"
+            tools:src="@drawable/user_placeholder_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="@{farmers.fullName}"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image"
+            tools:text="Farmers name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addressTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{farmers.homeAddress}"
+            android:textColor="#707070"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/titleTextView"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView"
+            tools:text="Ikorodu Lagos" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/emailTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{farmers.email}"
+            android:textColor="#707070"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/titleTextView"
+            app:layout_constraintTop_toBottomOf="@id/addressTextView"
+            tools:text="Kingsleyenou@gmail.com" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalFarmTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#707070"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/titleTextView"
+            app:layout_constraintTop_toBottomOf="@id/emailTextView"
+            tools:text="20 Farms" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addFarmBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:alpha="0.8"
+            android:text="Add a Farm"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalFarmTextView"
+            app:rippleColor="@color/backgroundColor"
+            app:strokeColor="@color/backgroundColor" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewFarmsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="8dp"
+            android:alpha="0.8"
+            android:text="View all Farms"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/addFarmBtn"
+            app:layout_constraintStart_toStartOf="@id/emailTextView"
+            app:layout_constraintTop_toTopOf="@id/addFarmBtn"
+            app:strokeColor="@color/backgroundColor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
