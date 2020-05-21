@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.techkingsley.agromall.R
@@ -55,6 +56,7 @@ class FarmsFragment : Fragment(R.layout.farms_fragment), FarmsRecyclerAdapter.On
 
     override fun onViewMapClicked(farm: Farms) {
         Log.i(TAG, "farm clicked is $farm")
+        findNavController().navigate(R.id.action_farmsFragment_to_mapsActivity)
     }
 
 }

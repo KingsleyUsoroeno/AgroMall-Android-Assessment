@@ -57,14 +57,17 @@
             android:hint="Your Farms location"
             app:error="@{addFarmVm.errorFarmLocationLiveData}"
             app:errorEnabled="true"
+            android:cursorVisible="false"
+            android:focusable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textInputFarmName">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtFarmLocation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPersonName"
+                android:inputType="none"
                 android:text="@={addFarmVm.farmsLocationLiveData}" />
         </com.google.android.material.textfield.TextInputLayout>
 

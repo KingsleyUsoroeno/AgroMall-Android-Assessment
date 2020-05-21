@@ -122,7 +122,7 @@ class RegistrationFragment : Fragment(R.layout.registration_fragment) {
         }
     }
 
-    private fun hasFarmer() {
+    private fun hasFarmer(shouldExecute: Boolean = true) {
         if (hasFarmer) {
             findNavController().navigate(R.id.action_registrationFragment_to_dashboardFragment)
         }

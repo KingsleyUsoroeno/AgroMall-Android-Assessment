@@ -77,7 +77,9 @@
 
         <action
             android:id="@+id/action_dashboardFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
+            app:destination="@id/registrationFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -108,5 +110,14 @@
             android:name="farmerId"
             android:defaultValue="defaultValue"
             app:argType="string" />
+        <action
+            android:id="@+id/action_farmsFragment_to_mapsActivity"
+            app:destination="@id/mapsActivity" />
     </fragment>
+
+    <activity
+        android:id="@+id/mapsActivity"
+        android:name="com.techkingsley.agromall.ui.maps.MapsActivity"
+        android:label="MapsActivity"
+        tools:layout="@layout/activity_maps" />
 </navigation>

@@ -38,5 +38,4 @@ interface FarmersDataSource {
 
     fun getTotalFarms(): LiveData<Int?>?
 
-
 }
