@@ -1,6 +1,5 @@
 package com.techkingsley.agromall.ui.dashboard
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -13,19 +12,14 @@ import com.bumptech.glide.Glide
 import com.techkingsley.agromall.R
 import com.techkingsley.agromall.data.Farmers
 import com.techkingsley.agromall.databinding.LayoutFarmersBinding
-import com.techkingsley.agromall.ui.farms.FarmsViewModel
 
-class FarmersRecyclerAdapter(private val farmsViewModel: FarmsViewModel) : ListAdapter<Farmers, FarmersRecyclerAdapter.FarmViewHolder>(FarmersDiffUtil()) {
+class FarmersRecyclerAdapter : ListAdapter<Farmers, FarmersRecyclerAdapter.FarmViewHolder>(FarmersDiffUtil()) {
 
     private lateinit var listener: OnItemClickListener
 
     interface OnItemClickListener {
         fun onAddFarmClicked(farmer: Farmers)
         fun onViewAllFarmsClicked(farmer: Farmers)
-    }
-
-    fun getAllFarmsByFarmerId(farmerId: String): Int? {
-        return farmsViewModel.observeTotalFarmersFarmCount(farmerId, 1).value
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener) {
@@ -49,7 +43,7 @@ class FarmersRecyclerAdapter(private val farmsViewModel: FarmsViewModel) : ListA
 
         fun bind(farmer: Farmers) {
             viewBinding.farmers = farmer
-            Log.i("farmsAdapter", "${getAllFarmsByFarmerId(farmer.id)}")
+            //Log.i("farmsAdapter", "${getAllFarmsByFarmerId(farmer.id)}")
             viewBinding.executePendingBindings()
             viewBinding.addFarmBtn.setOnClickListener {
                 listener.onAddFarmClicked(farmer)

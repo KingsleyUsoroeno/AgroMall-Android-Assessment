@@ -2,7 +2,7 @@
     <string name="app_name">AgroMall</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae dignissimos eos et excepturi fugiat laudantium libero natus quis tempora. Autem blanditiis fugit inventore maxime quas quos soluta veritatis voluptate.</string>
-    <string name="dashboard">Dashboard</string>
+    <string name="dashboard">View Dashboard</string>
     <string name="register_new_farmer">Register new farmer</string>
     <string name="register_farmer">Register farmer</string>
     <string name="total_farmers">Total Farmers</string>

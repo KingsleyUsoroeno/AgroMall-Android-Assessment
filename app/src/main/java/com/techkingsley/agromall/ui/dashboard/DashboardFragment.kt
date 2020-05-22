@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.techkingsley.agromall.R
 import com.techkingsley.agromall.data.Farmers
 import com.techkingsley.agromall.databinding.DashboardFragmentBinding
-import com.techkingsley.agromall.ui.farms.FarmsViewModel
 
 class DashboardFragment : Fragment(R.layout.dashboard_fragment), FarmersRecyclerAdapter.OnItemClickListener {
 
@@ -23,7 +22,6 @@ class DashboardFragment : Fragment(R.layout.dashboard_fragment), FarmersRecycler
     }
 
     private val viewModel: DashboardViewModel by viewModels()
-    private val farmsViewModel: FarmsViewModel by viewModels()
     private lateinit var viewBinding: DashboardFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +66,7 @@ class DashboardFragment : Fragment(R.layout.dashboard_fragment), FarmersRecycler
     }
 
     private fun setUpAdapter(farmers: List<Farmers>) {
-        val farmersAdapter = FarmersRecyclerAdapter(farmsViewModel)
+        val farmersAdapter = FarmersRecyclerAdapter()
         farmersAdapter.submitList(farmers)
         farmersAdapter.setOnItemClickListener(this)
         val dividerItemDecoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
