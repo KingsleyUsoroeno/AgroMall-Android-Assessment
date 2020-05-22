@@ -2,7 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
         <variable
             name="loginVM"
             type="com.techkingsley.agromall.ui.authentication.LoginViewModel" />
@@ -48,7 +47,7 @@
                     android:layout_marginStart="18dp"
                     android:layout_marginLeft="18dp"
                     android:layout_marginTop="8dp"
-                    android:text="Hello There"
+                    android:text="@string/hello_there"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toTopOf="@id/text_login_to_continue"
@@ -63,7 +62,7 @@
                     android:layout_marginStart="18sp"
                     android:layout_marginLeft="18dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Log in to Continue"
+                    android:text="@string/log_in_to_continue"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +104,6 @@
                         android:text="@={loginVM.emailLiveData}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputPassword"

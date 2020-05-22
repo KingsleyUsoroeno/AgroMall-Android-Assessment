@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="farm"
             type="com.techkingsley.agromall.data.Farms" />
@@ -46,15 +45,14 @@
             android:id="@+id/btnViewOnMap"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:alpha="0.8"
             android:text="View on Map"
             android:textSize="16sp"
             android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/farmLocationTextView"
             app:rippleColor="@color/backgroundColor"

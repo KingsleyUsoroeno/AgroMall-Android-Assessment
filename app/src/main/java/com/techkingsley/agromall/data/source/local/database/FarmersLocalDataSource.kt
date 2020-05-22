@@ -90,4 +90,8 @@ class FarmersLocalDataSource internal constructor(
         return farmsDao.getCount()
     }
 
+    override fun observeTotalFarmersFarmCount(farmerId: String, userId: Int): LiveData<Int?> {
+        return farmsDao.observeTotalFarmersFarmCount(farmerId, userId)
+    }
+
 }

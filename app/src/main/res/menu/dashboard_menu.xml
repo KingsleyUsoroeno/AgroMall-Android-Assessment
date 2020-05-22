@@ -4,5 +4,5 @@
         android:id="@+id/registerFarmer"
         android:icon="@drawable/ic_dashboard"
         android:menuCategory="secondary"
-        android:title="@string/register_farmer" />
+        android:title="@string/register_new_farmer" />
 </menu>

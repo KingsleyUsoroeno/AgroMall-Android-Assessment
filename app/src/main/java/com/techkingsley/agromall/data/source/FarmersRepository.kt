@@ -69,4 +69,8 @@ class FarmersRepository private constructor(private val farmersLocalDataSource: 
     override fun observeFarmsByFarmerID(farmerId: String, userId: Int): LiveData<List<Farms>?> {
         return farmersLocalDataSource.getAllFarmsByFarmerID(farmerId, userId)
     }
+
+    override fun observeTotalFarmersFarmCount(farmerId: String, userId: Int): LiveData<Int?> {
+        return farmersLocalDataSource.observeTotalFarmersFarmCount(farmerId, userId)
+    }
 }

@@ -27,11 +27,11 @@
             android:layout_marginLeft="10dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
-            app:cardElevation="6dp"
+            app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="@id/infoLayout"
             app:layout_constraintEnd_toStartOf="@id/cardTotalFarms"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="@id/farm_logo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Total Farmers"
+                    android:text="@string/total_farmers"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:gravity="center"
-                    android:text="30"
+                    tools:text="30"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
             android:layout_marginEnd="10dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
-            app:cardElevation="6dp"
+            app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/cardTotalFarmers"
             app:layout_constraintTop_toTopOf="@id/cardTotalFarmers">
@@ -89,7 +89,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Total Farms"
+                    android:text="@string/total_farms"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:gravity="center"
-                    android:text="30"
+                    tools:text="30"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -124,17 +124,13 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/farmersRecyclerView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="70dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="65dp"
                 android:clipToPadding="false"
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:itemCount="3"
+                tools:itemCount="2"
                 tools:listitem="@layout/layout_farmers" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

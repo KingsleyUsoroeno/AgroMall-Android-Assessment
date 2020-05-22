@@ -38,4 +38,6 @@ interface FarmersDataSource {
 
     fun getTotalFarms(): LiveData<Int?>?
 
+    fun observeTotalFarmersFarmCount(farmerId: String, userId: Int): LiveData<Int?>
+
 }

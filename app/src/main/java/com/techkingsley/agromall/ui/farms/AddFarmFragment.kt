@@ -61,9 +61,10 @@ class AddFarmFragment : Fragment(R.layout.add_farm_fragment) {
     private fun initPlacesApi() {
         Log.i(TAG, "initPlacesApi() Called")
         if (!Places.isInitialized()) {
-            Places.initialize(requireContext(), BuildConfig.GOOGLE_PLAY_API_KEY)
+            Places.initialize(requireContext(), BuildConfig.GOOGLE_MAP_API_KEY)
         }
         val placesClient = Places.createClient(requireContext())
+        //placesClient.fetchPhoto(FetchPhotoRequest.newInstance())
         // Set the fields to specify which types of place data to
         // return after the user has made a selection.
         val fields = listOf(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.LAT_LNG)

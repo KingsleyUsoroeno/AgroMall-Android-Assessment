@@ -14,4 +14,8 @@ class FarmsViewModel(private val app: Application) : AndroidViewModel(app) {
         return farmersRepository.observeFarmsByFarmerID(farmerId, userId)
     }
 
+    fun observeTotalFarmersFarmCount(farmerId: String, userId: Int): LiveData<Int?> {
+        return farmersRepository.observeTotalFarmersFarmCount(farmerId, userId)
+    }
+
 }

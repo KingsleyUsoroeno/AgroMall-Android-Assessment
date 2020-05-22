@@ -56,7 +56,7 @@ class FarmsFragment : Fragment(R.layout.farms_fragment), FarmsRecyclerAdapter.On
 
     override fun onViewMapClicked(farm: Farms) {
         Log.i(TAG, "farm clicked is $farm")
-        findNavController().navigate(R.id.action_farmsFragment_to_mapsActivity)
+        val action = FarmsFragmentDirections.actionFarmsFragmentToMapsActivity(farm)
+        findNavController().navigate(action)
     }
-
 }

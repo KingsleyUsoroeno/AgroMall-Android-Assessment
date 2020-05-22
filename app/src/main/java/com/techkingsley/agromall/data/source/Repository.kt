@@ -22,4 +22,6 @@ interface Repository {
     fun getTotalFarms(): LiveData<Int?>
 
     fun observeFarmsByFarmerID(farmerId: String, userId: Int): LiveData<List<Farms>?>
+
+    fun observeTotalFarmersFarmCount(farmerId: String, userId: Int): LiveData<Int?>
 }

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="addFarmVm"
             type="com.techkingsley.agromall.ui.farms.AddFarmViewModel" />
@@ -31,7 +30,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="35dp"
             android:layout_marginEnd="20dp"
-            android:hint="Farm Name"
+            android:hint="@string/farm_name"
             app:error="@{addFarmVm.errorFarmNameLiveData}"
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +44,6 @@
                 android:text="@={addFarmVm.farmNameLiveData}" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputFarmsLocation"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -54,7 +52,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="20dp"
-            android:hint="Your Farms location"
+            android:hint="@string/your_farms_location"
             app:error="@{addFarmVm.errorFarmLocationLiveData}"
             app:errorEnabled="true"
             android:cursorVisible="false"
@@ -68,7 +66,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="none"
-                android:text="@={addFarmVm.farmsLocationLiveData}" />
+                android:cursorVisible="false"
+                android:drawableEnd="@drawable/ic_edit_location"
+                android:drawableRight="@drawable/ic_edit_location"
+                android:focusable="false"
+                android:text="@={addFarmVm.farmsLocationLiveData}"
+                app:drawableTint="@color/backgroundColor" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
@@ -77,7 +80,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="18dp"
             android:onClick="@{() -> addFarmVm.registerFarm(farmerId, userId)}"
-            android:text="Register Farm"
+            android:text="@string/register_farm"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@id/textInputFarmsLocation"
             app:layout_constraintStart_toStartOf="@id/textInputFarmsLocation"

@@ -3,5 +3,24 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae dignissimos eos et excepturi fugiat laudantium libero natus quis tempora. Autem blanditiis fugit inventore maxime quas quos soluta veritatis voluptate.</string>
     <string name="dashboard">Dashboard</string>
-    <string name="register_farmer">Register new farmer</string>
+    <string name="register_new_farmer">Register new farmer</string>
+    <string name="register_farmer">Register farmer</string>
+    <string name="total_farmers">Total Farmers</string>
+    <string name="total_farms">Total Farms</string>
+    <string name="farm_name">Farm Name</string>
+    <string name="your_farms_location">Your Farms location</string>
+    <string name="register_farm">Register Farm</string>
+    <string name="local_farmers">Local Farmers</string>
+
+    <string name="local_farmers_text">At AgroMall we partner with the best farmers nationwide to deliver fresh and satisfying farm produce</string>
+    <string name="only_the_best_organic_produce">Only the best organic Produce</string>
+    <string name="organic_produce_text">At AgroMall we ensure that you not only get the best farm produce for your money we also guarantee that the are of high standard </string>
+    <string name="local_brands_text">At AgroMall we work with and support local farming brands you might know of to ensure that the have the best tools and resources at their disposal </string>
+    <string name="we_support_local_farming_brands">We support local farming brands</string>
+    <string name="hello_there">Hello There</string>
+    <string name="log_in_to_continue">Log in to Continue</string>
+    <string name="home_address">Home Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="full_name">Full Name</string>
 </resources>

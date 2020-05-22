@@ -120,6 +120,9 @@ class RegistrationFragment : Fragment(R.layout.registration_fragment) {
         if (requestCode == STORAGE_PERMISSION_CODE && grantResults.isEmpty() && grantResults[0] == PackageManager.PERMISSION_DENIED) {
             Toast.makeText(this.requireContext(), "Cant access your files without permission", Toast.LENGTH_LONG).show()
         }
+        if (requestCode == STORAGE_PERMISSION_CODE && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            openGalleryForImage()
+        }
     }
 
     private fun hasFarmer(shouldExecute: Boolean = true) {

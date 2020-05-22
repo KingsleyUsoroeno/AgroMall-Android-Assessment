@@ -119,5 +119,9 @@
         android:id="@+id/mapsActivity"
         android:name="com.techkingsley.agromall.ui.maps.MapsActivity"
         android:label="MapsActivity"
-        tools:layout="@layout/activity_maps" />
+        tools:layout="@layout/activity_maps">
+        <argument
+            android:name="farm"
+            app:argType="com.techkingsley.agromall.data.Farms" />
+    </activity>
 </navigation>

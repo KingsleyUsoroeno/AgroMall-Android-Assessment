@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="registrationViewModel"
             type="com.techkingsley.agromall.ui.registration.RegistrationViewModel" />
@@ -62,7 +61,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="35dp"
                 android:layout_marginEnd="20dp"
-                android:hint="Full Name"
+                android:hint="@string/full_name"
                 app:errorEnabled="true"
                 app:error="@{registrationViewModel.errorFullNameLiveData}"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +83,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="20dp"
-                android:hint="Email Address"
+                android:hint="@string/email_address"
                 app:errorEnabled="true"
                 app:error="@{registrationViewModel.errorEmailLiveData}"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +106,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="20dp"
                 app:error="@{registrationViewModel.errorPhoneNumberLiveData}"
-                android:hint="Phone Number"
+                android:hint="@string/phone_number"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +120,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputHomeAddress"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -130,7 +128,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="20dp"
-                android:hint="Home Address"
+                android:hint="@string/home_address"
                 app:errorEnabled="true"
                 app:error="@{registrationViewModel.errorHomeAddressLiveData}"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -140,8 +138,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@={registrationViewModel.homeAddressLiveData}"
-                    android:inputType="textLongMessage" />
+                    android:lines="3"
+                    android:text="@={registrationViewModel.homeAddressLiveData}" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -151,8 +149,9 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="18dp"
                 android:onClick="@{() -> registrationViewModel.registerFarmer()}"
-                android:textSize="20sp"
-                android:text="Register"
+                android:text="@string/register_farmer"
+                android:textSize="18sp"
+                android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="@id/textInputHomeAddress"
                 app:layout_constraintStart_toStartOf="@id/textInputHomeAddress"
                 app:layout_constraintTop_toBottomOf="@id/textInputHomeAddress" />

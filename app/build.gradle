@@ -22,7 +22,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "GOOGLE_PLAY_API_KEY", apikeyProperties['GOOGLE_PLAY_API_KEY'])
+        buildConfigField("String", "GOOGLE_MAP_API_KEY", apikeyProperties['GOOGLE_MAP_API_KEY'])
+
+        // Add for using latest experimental build of Android Extensions
+        androidExtensions {
+            experimental = true
+        }
     }
 
     buildTypes {

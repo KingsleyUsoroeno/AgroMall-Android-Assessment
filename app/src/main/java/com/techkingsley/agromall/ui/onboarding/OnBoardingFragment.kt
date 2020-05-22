@@ -29,11 +29,7 @@ class OnBoardingFragment : Fragment(R.layout.fragment_onboarding), ViewPager.OnP
     }
 
     private fun setUpOnBoarding() {
-        layouts = arrayListOf(
-            R.layout.layout_first_item,
-            R.layout.layout_second_item,
-            R.layout.layout_third_item
-        )
+        layouts = arrayListOf(R.layout.layout_first_item, R.layout.layout_second_item, R.layout.layout_third_item)
         val adapter = ViewPagerAdapter(layouts)
         viewPager.adapter = adapter
         viewPager.addOnPageChangeListener(this)

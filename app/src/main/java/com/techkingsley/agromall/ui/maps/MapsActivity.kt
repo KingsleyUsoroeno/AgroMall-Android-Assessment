@@ -15,12 +15,14 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.techkingsley.agromall.R
+import com.techkingsley.agromall.data.Farms
 import com.techkingsley.agromall.databinding.ActivityMapsBinding
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var viewBinding: ActivityMapsBinding
     private lateinit var map: GoogleMap
+    private lateinit var farmLatLng: LatLng
 
     companion object {
         private const val REQUEST_LOCATION_PERMISSION = 1
@@ -29,6 +31,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (intent != null) {
+            val farmParcel = intent.getParcelableExtra<Farms>("farm")
+            Log.i(TAG, "farm parcel is $farmParcel")
+            farmParcel?.let {
+                farmLatLng = LatLng(it.latitude, it.longitude)
+            }
+        }
+
         viewBinding = DataBindingUtil.setContentView(this, R.layout.activity_maps)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -38,7 +48,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun addPolyline(latLng: LatLng) {
-        map.addPolyline(PolylineOptions().clickable(true).add(latLng))
+        map.addPolyline(
+            PolylineOptions().clickable(true)
+                .add(latLng)
+                .visible(true)
+                .color(ContextCompat.getColor(this, R.color.white))
+        )
     }
 
     private fun addCircleToMap(latLng: LatLng) {
@@ -77,20 +92,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        val latLng = LatLng(37.422160, -122.084270)
+
+        if (!::farmLatLng.isInitialized) {
+            Log.e(TAG, "unlikely but the users farm has no co-ordinates")
+            farmLatLng = LatLng(37.422160, -122.084270)
+        }
 
         //enable the zoom in/zoom out interface on the map
         map.uiSettings.isZoomControlsEnabled = true
 
-        map.isMyLocationEnabled = true
-
         map.mapType = GoogleMap.MAP_TYPE_NORMAL
 
-        animateMap(latLng)
+        animateMap(farmLatLng)
 
-        addPolyline(latLng)
+        addPolyline(farmLatLng)
 
-        addCircleToMap(latLng)
+        addCircleToMap(farmLatLng)
 
         setPoiClick(map)
 

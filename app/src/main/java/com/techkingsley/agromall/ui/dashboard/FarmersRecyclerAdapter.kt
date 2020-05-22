@@ -24,8 +24,8 @@ class FarmersRecyclerAdapter(private val farmsViewModel: FarmsViewModel) : ListA
         fun onViewAllFarmsClicked(farmer: Farmers)
     }
 
-    fun getAllFarmsByFarmerId(farmerId: String): Int {
-        return 0
+    fun getAllFarmsByFarmerId(farmerId: String): Int? {
+        return farmsViewModel.observeTotalFarmersFarmCount(farmerId, 1).value
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener) {
@@ -50,7 +50,6 @@ class FarmersRecyclerAdapter(private val farmsViewModel: FarmsViewModel) : ListA
         fun bind(farmer: Farmers) {
             viewBinding.farmers = farmer
             Log.i("farmsAdapter", "${getAllFarmsByFarmerId(farmer.id)}")
-            viewBinding.totalFarmTextView.text = "${getAllFarmsByFarmerId(farmer.id)} Farms"
             viewBinding.executePendingBindings()
             viewBinding.addFarmBtn.setOnClickListener {
                 listener.onAddFarmClicked(farmer)
@@ -79,6 +78,7 @@ class FarmersRecyclerAdapter(private val farmsViewModel: FarmsViewModel) : ListA
             if (imageUrl != null) {
                 Glide.with(view.context)
                     .load(imageUrl)
+                    .placeholder(R.drawable.user_placeholder_image)
                     .into(view)
             } else {
                 Glide.with(view.context)

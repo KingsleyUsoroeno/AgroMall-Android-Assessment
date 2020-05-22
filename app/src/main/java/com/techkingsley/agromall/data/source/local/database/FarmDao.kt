@@ -36,4 +36,7 @@ interface FarmDao {
 
     @Query("SELECT * FROM Farms WHERE farmerId =:farmerId AND userId =:userID")
     fun observeFarmsByFarmerID(farmerId: String, userID: Int): LiveData<List<Farms>?>
+
+    @Query("SELECT COUNT(*) FROM Farms WHERE farmerId =:farmerId AND userId =:userId")
+    fun observeTotalFarmersFarmCount(farmerId: String, userId: Int): LiveData<Int?>
 }
