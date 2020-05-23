@@ -8,6 +8,7 @@ In your project's root directory, create a file `apikey.properties` and include 
 
 `GOOGLE_MAP_API_KEY = ""`
 
+## Technologies used:
 
 * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) to store and manage UI-related data in a lifecycle conscious way.
 * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) to handle data in a lifecycle-aware fashion.
