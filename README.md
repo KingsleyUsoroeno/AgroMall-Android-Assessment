@@ -3,7 +3,7 @@
 
 ## Installation
 AgroMall requires a minimum API level of 16. Clone the repository. The App makes use of the Google Place and Google Maps API, You will need to get a billed Google Maps API key from your Google Console
-[here](https://developers.google.com/places/android-sdk/get-api-key) in order to enable the Google Place Functionality, If you don’t already have an account, you will need to create one in order to create an API Key.
+[here](https://developers.google.com/places/android-sdk/get-api-key) in order to enable the Google Place Functionality, If you don’t already have an account, you will need to create one in order to get an API Key.
 In your project's root directory, create a file `apikey.properties` and include the following lines:
 
 `GOOGLE_MAP_API_KEY = ""`
@@ -31,5 +31,22 @@ Those packages includes.
 * local
 * dataSource
 * UI 
-etc
+
+### Screenshots
+
+<p float="left">
+  <img src="https://github.com/KingsleyUsoroeno/AgroMall-Android-Assessment/blob/master/screenshots/dashboard_page.png" width="300" />
+  <img src="https://github.com/KingsleyUsoroeno/AgroMall-Android-Assessment/blob/master/screenshots/login_screen.png" width="300" /> 
+  <img src="https://github.com/KingsleyUsoroeno/AgroMall-Android-Assessment/blob/master/screenshots/page_register_farmer.png"   width="300" />
+</p>
+
+<p float="left">
+  <img src="https://github.com/KingsleyUsoroeno/AgroMall-Android-Assessment/blob/master/screenshots/onboarding_page.png" width="300" />
+  <img src="https://github.com/KingsleyUsoroeno/AgroMall-Android-Assessment/blob/master/screenshots/maps_screen.png" width="300" />
+</p>
+
+
+
+
+
 
