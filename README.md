@@ -31,5 +31,21 @@ Those packages includes.
 * local
 * dataSource
 * UI 
-etc
+
+### Screenshots
+
+<p float="left">
+  <img src="https://github.com/KingsleyUsoroeno/AgroMall-Android-Assessment/blob/master/screenshots/dashboard_page.png" width="300" />
+  <img src="https://github.com/KingsleyUsoroeno/AgroMall-Android-Assessment/blob/master/screenshots/login_screen.png" width="300" /> 
+  <img src="https://github.com/KingsleyUsoroeno/AgroMall-Android-Assessment/blob/master/screenshots/page_register_farmer.png"   width="300" />
+</p>
+
+<p float="left">
+  <img src="https://github.com/KingsleyUsoroeno/AgroMall-Android-Assessment/blob/master/screenshots/onboarding_page.png" width="300" />
+</p>
+
+
+
+
+
 
