@@ -83,8 +83,7 @@ class DashboardFragment : Fragment(R.layout.dashboard_fragment), FarmersRecycler
 
     override fun onViewAllFarmsClicked(farmer: Farmers) {
         Log.i(TAG, "clicked farmer is $farmer")
-        val farmerId = farmer.id
-        val action = DashboardFragmentDirections.actionDashboardFragmentToFarmsFragment(farmerId)
+        val action = DashboardFragmentDirections.actionDashboardFragmentToFarmsFragment(farmer)
         findNavController().navigate(action)
     }
 

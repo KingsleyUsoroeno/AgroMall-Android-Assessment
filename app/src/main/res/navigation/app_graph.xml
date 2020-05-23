@@ -106,13 +106,12 @@
         android:label="All Farms"
         tools:layout="@layout/farms_fragment">
 
-        <argument
-            android:name="farmerId"
-            android:defaultValue="defaultValue"
-            app:argType="string" />
         <action
             android:id="@+id/action_farmsFragment_to_mapsActivity"
             app:destination="@id/mapsActivity" />
+        <argument
+            android:name="farmer"
+            app:argType="com.techkingsley.agromall.data.Farmers" />
     </fragment>
 
     <activity
